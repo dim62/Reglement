@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Règlement – Federal Roleplay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("150A4ED6-37BE-4EF1-A839-3D06E881B2FA.png"); /* chemin de l'image */
+            background-size: cover;        /* couvre tout l'écran */
+            background-position: center;   /* centrée */
+            background-repeat: no-repeat;  /* pas de répétition */
+            background-attachment: fixed;  /* effet propre au scroll */
+            color: #eee;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #141414b0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        h1, h2 {
+            color: #00bfff;
+            text-align: center;
+        }
+
+        h3 {
+            color: #ffa500;
+            margin-top: 25px;
+        }
+
+        .reglement {
+            max-height: 450px;
+            overflow-y: auto;
+            padding: 20px;
+            border: 1px solid #333;
+            background: #141414b0;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .accept {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+
+        button.active {
+            background-color: #28a745;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📜 Règlement Officiel</h1>
+    <h2>Serveur Federal Roleplay</h2>
+
+    <div class="reglement">
+
+        <h3>1. Définitions / Termes RP</h3>
+        <ul>
+            <li><strong>PowerGaming</strong> : Action irréalisable dans la vraie vie.</li>
+            <li><strong>MetaGaming</strong> : Utilisation d’informations HRP en RP.</li>
+            <li><strong>FreeKill</strong> : Tuer sans raison RP valable.</li>
+            <li><strong>NoFear / NoPain</strong> : Ne pas jouer la peur ou la douleur.</li>
+            <li><strong>ForceRP</strong> : Forcer un joueur à agir sans possibilité RP.</li>
+            <li><strong>CarKill</strong> : Tuer avec un véhicule sans raison RP.</li>
+            <li><strong>JumpRun</strong> : Courir en sautant pour aller plus vite.</li>
+            <li><strong>FreePunch</strong> : Frapper sans raison RP.</li>
+        </ul>
+
+        <h3>2. Règles Générales</h3>
+        <ul>
+            <li>Le respect est obligatoire envers tous les joueurs et le staff.</li>
+            <li>Le HRP vocal est interdit en jeu.</li>
+            <li>Votre pseudo doit correspondre à votre nom RP.</li>
+            <li>Les noms non RP ou humoristiques sont interdits.</li>
+            <li>Les cheats, mods menus, bugs abuse et trolls sont strictement interdits.</li>
+            <li>Déconnexion pour éviter une scène RP ou un coma interdite.</li>
+            <li>Aucun propos raciste, sexiste, homophobe ou insultant.</li>
+        </ul>
+
+        <h3>3. Règles RP</h3>
+        <ul>
+            <li>Les scènes RP doivent rester cohérentes et réalistes.</li>
+            <li>Les zones safe (Hôpital, LSPD, Gouvernement) sont protégées.</li>
+            <li>Interdiction de braquer ou tirer en zone safe.</li>
+            <li>Vol de véhicules de service interdit (LSPD, EMS).</li>
+            <li>Tuer des PNJ pour récupérer des armes est interdit.</li>
+            <li>Les armes trouvées dans les véhicules sont considérées HRP.</li>
+            <li>Les armes lourdes sont interdites sauf autorisation staff.</li>
+        </ul>
+
+        <h3>4. Entreprises & Activités</h3>
+        <ul>
+            <li>Les entreprises légales ne peuvent pas blanchir de l’argent.</li>
+            <li>Un patron peut perdre son entreprise en cas d’illégalité.</li>
+            <li>Toute activité illégale doit être validée RP.</li>
+        </ul>
+
+        <h3>5. LSPD & EMS</h3>
+        <ul>
+            <li>Obligation d’utiliser la tenue et les véhicules de service.</li>
+            <li>Interdiction d’activités illégales sans accord staff.</li>
+            <li>La corruption doit être validée par le staff.</li>
+            <li>Les EMS ne peuvent pas porter d’armes à feu en service.</li>
+        </ul>
+
+        <h3>6. Gangs & Organisation Criminelle</h3>
+        <ul>
+            <li>Interdiction de créer un gang sans accord du gouvernement.</li>
+            <li>Maximum : 8 membres officiels + 2 non officiels.</li>
+            <li>Les braquages doivent respecter les règles établies.</li>
+            <li>Le Drive-By est autorisé uniquement pour neutraliser un véhicule.</li>
+        </ul>
+
+        <h3>7. Sanctions</h3>
+        <ul>
+            <li>Tout non-respect du règlement entraîne une sanction.</li>
+            <li>Les sanctions vont de l’avertissement au bannissement.</li>
+            <li>Le staff a toujours le dernier mot.</li>
+        </ul>
+
+    </div>
+
+    <div class="accept">
+        <label>
+            <input type="checkbox" id="accept">
+            J’ai lu et j’accepte le règlement du serveur
+        </label><br>
+        <button id="btn" disabled>Valider sur Discord</button>
+    </div>
+</div>
+
+<script>
+const checkbox = document.getElementById("accept");
+const button = document.getElementById("btn");
+
+checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+        button.disabled = false;
+        button.classList.add("active");
+    } else {
+        button.disabled = true;
+        button.classList.remove("active");
+    }
+});
+
+button.addEventListener("click", () => {
+    window.open("https://discordapp.com/channels/1454919827989991426/1454919829181042817","_blank");
+});
+</script>
+
